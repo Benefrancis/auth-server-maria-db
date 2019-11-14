@@ -1,4 +1,5 @@
-INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_uri, scope, access_token_validity, refresh_token_validity, resource_ids, authorized_grant_types, additional_information) VALUES ('mobile', '{bcrypt}$2y$10$hGZR7bOLntV24fIWXv810.U7eyvaEKJkLDQy6KiRnb1YeH1ZauChe', 'http://localhost:8080/code', 'READ,WRITE', '3600', '10000', 'inventory,payment', 'authorization_code,password,refresh_token,implicit', '{}');
+INSERT INTO `oauth_client_details` (`client_id`, `client_secret`, `web_server_redirect_uri`, `scope`, `access_token_validity`, `refresh_token_validity`, `resource_ids`, `authorized_grant_types`, `authorities`, `additional_information`, `autoapprove`) VALUES
+	('mobile', '{bcrypt}$2a$10$DXV6Dk7X9vNr02T9jaF9MeonKJ7DuE8klc2p5fj7ivCSJtFgMt4B.', 'http://localhost:8080/code', 'READ,WRITE', 3600, 10000, 'inventory,payment', 'authorization_code,password,refresh_token,implicit', NULL, '{}', NULL);
 
  INSERT INTO PERMISSION (NAME) VALUES
  ('create_profile'),
@@ -16,10 +17,8 @@ INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_
      (4,1), /* delete admin */
      (2,2),  /* read operator */
      (3,2);  /* update operator */
-insert into user (id, username,password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('1', 'krish','{bcrypt}$2y$10$hGZR7bOLntV24fIWXv810.U7eyvaEKJkLDQy6KiRnb1YeH1ZauChe', 'k@krishantha.com', '1', '1', '1', '1');
- insert into  user (id, username,password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('2', 'suranga', '{bcrypt}$2y$10$hGZR7bOLntV24fIWXv810.U7eyvaEKJkLDQy6KiRnb1YeH1ZauChe','k@krishantha.com', '1', '1', '1', '1');
-
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `enabled`, `accountNonExpired`, `credentialsNonExpired`, `accountNonLocked`) VALUES
+	(1, 'francis', '{bcrypt}$2a$10$DXV6Dk7X9vNr02T9jaF9MeonKJ7DuE8klc2p5fj7ivCSJtFgMt4B.', 'benefrancis@gmail.com', 1, 1, 1, 1);
 INSERT INTO ROLE_USER (ROLE_ID, USER_ID)
     VALUES
-    (1, 1) /* krish-admin */,
-    (2, 2) /* suranga-operatorr */ ;
+    (1, 1) /* francis-admin */;
