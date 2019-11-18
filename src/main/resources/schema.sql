@@ -93,7 +93,7 @@ create table if not exists oauth_code (
 );
 
 create table if not exists oauth_approvals (
-	userId VARCHAR(256),
+    userId VARCHAR(256),
 	clientId VARCHAR(256),
 	scope VARCHAR(256),
 	status VARCHAR(10),
